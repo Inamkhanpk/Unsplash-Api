@@ -1,0 +1,13 @@
+version: 2
+worflows:
+  test-deploy:
+    jobs:
+      - test
+jobs:
+  test:
+    docker:
+      - image: cimg/node:16
+    steps:
+      - checkout
+      - run: node -version
+        
