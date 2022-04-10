@@ -6,8 +6,13 @@ worflows:
 jobs:
   test:
     docker:
-      - image: cimg/node:16
+      - image: cimg/node:16.14.0
     steps:
       - checkout
-      - run: node -version
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run Test
+          command: npm run test   
         
